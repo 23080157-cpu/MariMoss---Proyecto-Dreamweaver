@@ -1,0 +1,94 @@
+@font-face {
+    font-family: Napapiiri;
+    src: url(fonts/Napapiiri.ttf);
+}
+
+@font-face {
+    font-family: SleepTalk;
+    src: url(fonts/SLEEP.TTF);
+}
+
+body { 
+    margin: 0; 
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif; 
+    background-image: url(img/back2.jpg); 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-attachment: fixed;
+    overflow-x: hidden; /* Evita scroll horizontal innecesario */
+    font-family: SleepTalk;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Napapiiri !important;
+}
+
+/* Layout al 100% de ancho según tu esquema */
+nav, .container, footer { 
+    width: 100%; 
+    margin: 0; 
+    box-sizing: border-box; 
+    display: block; 
+    border: 2px solid #4e4e4e; 
+}
+
+/* Nav con tu textura original */
+nav { 
+    background-image: url(img/navindex.png); 
+    height: 50px; 
+    text-align: center; 
+    line-height: 50px; 
+    color: white; 
+}
+
+/* Contenedor con sistema de tablas de tu imagen */
+.container { 
+    background: #ffffff; 
+    display: table; 
+    table-layout: fixed; 
+}
+
+/* Celdas idénticas a tu main.css */
+aside, main { 
+    display: table-cell; 
+    vertical-align: top; 
+    border: 2px solid #4e4e4e;
+}
+
+/* Main (Izquierda) */
+main { padding: 40px; }
+
+/* Aside (Derecha) con tus texturas de cristal */
+aside { 
+    width: 250px; 
+    padding: 20px; 
+    color: white; 
+    text-align: center;
+}
+
+.sidebar-right { 
+    background-image: url(img/glass.png), url(img/sideright.png); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+}
+
+/* Botones de Links con transparencia Aero */
+.menu-links a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    background: rgba(0,0,0,0.5);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Footer con tu textura original */
+footer { 
+    background-image: url(img/glass.png); 
+    height: 60px; 
+    text-align: center; 
+    line-height: 60px; 
+    color: white; 
+}
