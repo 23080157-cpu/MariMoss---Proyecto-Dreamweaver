@@ -2,194 +2,215 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>MariMoss</title>
+    <title>Galeria - MariMoss</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $(function() {
+            $("#acordeon-equipo, #acordeon-galeria").accordion({
+                heightStyle: "content",
+                collapsible: true
+            });
+        });
+    </script>
     <style>
-        @font-face {
-            font-family: Napapiiri; 
-            src: url(fonts/Napapiiri.ttf);
-        }
-        @font-face {
-            font-family: SleepTalk; 
-            src: url(fonts/SLEEP.TTF);
-        }
+        @font-face { font-family: Napapiiri; src: url(fonts/Napapiiri.ttf); }
+        @font-face { font-family: SleepTalk; src: url(fonts/SLEEP.TTF); }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            color: white;
-            background-image: url(imgU/windows_7_12.jpg);
+        body { 
+            font-family: SleepTalk !important; 
+            margin: 0; 
+            background-image: url(img/back2.jpg); 
+            background-repeat: no-repeat; 
+            background-size: cover; 
             background-attachment: fixed;
-            background-size: cover;
-            font-family: 'Napapiiri', sans-serif;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+        }
+        h1, h2, h3 { font-family: Napapiiri !important; }
+
+        header, nav, .container, footer { 
+            width: 85%; 
+            margin: 0 auto; 
+            box-sizing: border-box; 
+            border: 2px solid #4e4e4e; 
         }
 
-        .navbar {
-            display: flex;
-            justify-content: center;
-            background-image: url(imgU/navbar.png);
-            background-size: cover;
-            padding: 15px;
-            width: 100%;
-            z-index: 10;
+        header { 
+            background: hsla(0, 0%, 0%, 0.774); 
+            height: 250px; 
+            text-align: center; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            border-radius: 70px 80px 0 0; 
+            backdrop-filter: blur(1px) saturate(150%); 
+            box-shadow: rgba(0, 0, 0, .25) 0 14px 28px, rgba(0, 0, 0, .22) 0 10px 10px; 
         }
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-        }
-
-        .nav-links li {
-            margin: 0 20px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: white;
-            font-family: 'SleepTalk', sans-serif;
-            font-size: 1.2rem;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #4CAF50;
-        }
-
-        .main-wrapper {
-            display: flex;
-            flex: 1;
-            width: 100%;
-        }
-
-        .news-container {
-            flex: 1;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-            padding: 20px;
-            align-content: start;
-        }
-
-        aside {
-            width: 300px;
-            background-image: url(imgU/sidebar1.png);
-            background-size: cover;
-            padding: 20px;
-            min-height: 100%;
-        }
-
-        .news-card {
-            background-image: url(img/glass.png);
-            background-size: cover;
-            background-color: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 15px;
+        nav { 
+            background-image: url(img/navindex.png); 
+            height: 50px; 
+            text-align: center; 
+            line-height: 50px; 
+            color: white; 
             overflow: hidden;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            height: fit-content;
-            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .news-card:hover {
-            transform: translateY(-8px); 
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-            border-color: rgba(255, 255, 255, 0.5);
+        .container { 
+            background: #ffffff; 
+            display: table; 
+            table-layout: fixed; 
         }
 
-        .news-image {
-            position: relative;
-            height: 200px;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        aside, main { 
+            display: table-cell; 
+            vertical-align: top; 
+            border: 2px solid #4e4e4e;
         }
 
-        .news-image img {
+        .sidebar-right { 
+            width: 200px;
+            padding: 20px; 
+            text-align: center;
+            background-image: url(img/glass.png), url(img/sideright.png); 
+            background-size: cover; 
+            background-repeat: no-repeat; 
+        }
+
+        main { padding: 25px; }
+
+        footer { 
+            background-image: url(img/glass.png); 
+            height: 60px; 
+            text-align: center; 
+            line-height: 60px; 
+            margin-bottom: 1%; 
+            border-radius: 0 0 40px 40px; 
+            color: white; 
+        }
+
+        .img-galeria {
             width: 100%;
-            height: 100%;
-            object-fit: cover; 
+            border-radius: 10px;
+            border: 3px solid #0b7544;
+            margin-bottom: 10px;
+            transition: transform 0.2s;
+        }
+        .img-galeria:hover { transform: scale(1.02); }
+
+        .grid-galeria {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr; 
+            gap: 15px;
         }
 
-        .category {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: rgba(0, 123, 255, 0.8);
-            color: white;
-            padding: 5px 12px;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            font-family: 'SleepTalk', sans-serif;
+        .grid-integrantes {
+            display: flex;
+            justify-content: space-around;
+            gap: 10px;
+        }
+        .grid-integrantes img { width: 30%; height: auto; }
+
+        .ui-accordion-header {
+            background: url('img/navindex.png') !important;
+            background-size: cover !important;
+            color: #ffffff !important;
+            border: 1px solid rgba(255, 255, 255, 0.4) !important;
+            border-radius: 10px !important;
+            margin-top: 8px !important;
+            padding: 12px !important;
         }
 
-        .news-content {
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.2);
+        .ui-accordion-content {
+            font-family: SleepTalk;
+            background: rgba(255, 255, 255, 0.2) !important;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3) !important;
+            color: #006912 !important;
+            padding: 20px !important;
         }
 
-        .title {
-            font-family: 'SleepTalk', sans-serif;
-            font-size: 1.8rem;
-            margin: 10px 0;
-            color: #ffffff;
-            line-height: 1.1;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-        }
-
-        .excerpt {
-            font-family: 'Napapiiri', sans-serif;
-            font-size: 1rem;
-            color: #e0e0e0;
-            margin-bottom: 20px;
-        }
-
-        .read-more {
-            display: inline-block;
-            text-decoration: none;
-            color: #4CAF50;
-            font-weight: bold;
-            font-family: 'SleepTalk', sans-serif;
-            border: 1px solid #4CAF50;
-            padding: 5px 10px;
-            border-radius: 4px;
-            transition: background 0.3s, color 0.3s;
-        }
-
-        .read-more:hover {
-            background: #4CAF50;
-            color: white;
-        }
-
-        .menu-links a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            background: rgba(0,0,0,0.5);
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid rgba(255,255,255,0.2);
-            font-family: 'Napapiiri', sans-serif;
-        }
+         .ui-accordion-header:hover{color: rgb(0, 189, 110) !important;}
     </style>
 </head>
 <body>
-    <style></style>
-    <img src="imgU/asadal_stock_49.jpg" style="width: 20%; height: auto;">
-    <img src="imgU/DB.jpg" style="width: 20%; height: auto;">
-    <img src="imgU/Marimo (1).png" style="width: 20%; height: auto;">
-    <img src="imgU/navbar.png" style="width: 20%; height: auto;">
-    <img src="imgU/navbar2.png" style="width: 20%; height: auto;">
-    <img src="imgU/noticia1.webp" style="width: 20%; height: auto;"">
-    <img src="imgU/peakpx.jpg" style="width: 20%; height: auto;">
-    <img src="imgU/side bar2.png" style="width: 20%; height: auto;">
-    <img src="imgU/sidebar1.png" style="width: 20%; height: auto;">
-    <img src="imgU/windows_7_12.jpg" style="width: 20%; height: auto;">
-    <img src="imgU/wp14061529-girls-band-cry-wallpapers.jpg" style="width: 20%; height: auto;">
-    <img src="imgU/wp3738654.jpg" style="width: 20%; height: auto;">
+
+    <header><img src="img/logo.png" style="max-height: 80%;"></header>    
+    
+    <nav>
+        <marquee>Explora nuestra coleccion visual submarina y geek transmitida por todo el oceano!</marquee>
+    </nav>
+
+    <div class="container">
+        <main>
+            <div id="acordeon-equipo">
+                <h3>Integrantes y Boton Oficial</h3>
+                <div>
+                    <div class="grid-integrantes">
+                        <img src="img/TagDiego.png" alt="Diego">
+                        <img src="img/ubtag.png" alt="Ubaldo">
+                        <img src="img/migueltag.png" alt="Miguel">
+                    </div>
+                    <hr style="margin: 15px 0; border: 0; border-top: 1px solid #ccc;">
+                    <div style="text-align: center;">
+                        <p style="margin-bottom: 10px;">Boton del sitio:</p>
+                        <img src="img/ButtonMMoss.png" style="width: 200px;">
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div id="acordeon-galeria">
+                <h3>Coleccion Anime</h3>
+                <div>
+                    <div class="grid-galeria">
+                        <img src="imgU/wp14061529-girls-band-cry-wallpapers.jpg" class="img-galeria">
+                        <img src="imgU/DB.jpg" class="img-galeria">
+                        <img src="imgU/noticia1.webp" class="img-galeria">
+                    </div>
+                    <p>Nuestros fondos favoritos de esta temporada geek.</p>
+                </div>
+
+                <h3>Identidad MariMoss</h3>
+                <div>
+                    <div class="grid-galeria">
+                        <img src="imgU/Marimo (1).png" class="img-galeria">
+                        <img src="img/logo.png" class="img-galeria">
+                        <img src="img/marimoko_plush.jpg" class="img-galeria">
+                        <img src="imgU/asadal_stock_49.jpg" class="img-galeria">
+                        <img src="imgU/navbar.png" class="img-galeria">
+                        <img src="img/navindex.png" class="img-galeria">
+                        <img src="img/back2.jpg" class="img-galeria">
+                    </div>
+                    <p>La esencia visual de nuestro portal con algas y entornos naturales.</p>
+                </div>
+
+                <h3>Estetica Windows Aero</h3>
+                <div>
+                    <div class="grid-galeria">
+                        <img src="imgU/windows_7_12.jpg" class="img-galeria">
+                        <img src="imgU/peakpx.jpg" class="img-galeria">
+                        <img src="imgU/sidebar1.png" class="img-galeria">
+                    </div>
+                    <p>Inspiracion en cristales y transparencias del pasado.</p>
+                </div>
+            </div>
+        </main>
+
+        <aside class="sidebar-right">
+            <h1 style="color: white; font-size: 1.2rem; margin-bottom: 15px;">Links</h1>
+            <a href="index.html"><img src="img/linkPrincipal.png" width="150px"></a>
+            <p></p>
+            <a href="tienda.html"><img src="img/Link2Tienda.png" width="150px"></a>
+            <p></p>
+            <a href="galeria.html"><img src="img/Link3Galeria.png" width="150px"></a>
+        </aside>
+    </div>
+
+    <footer>
+        <span>Cobach Plantel 08 | Tecnologias de la innovacion y la informacion | 627 | 2026</span>
+    </footer>
+
 </body>
 </html>

@@ -2,27 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title> cuadro </title>
-     <style>
-
-        
-    table {
-      width: 70%;
-      border-collapse: collapse;
-      margin: 20px auto;
-      font-family: Arial, sans-serif;
-    }
-    th, td {
-      border: 1px solid #333;
-      padding: 8px;
-      text-align: center;
-    }
-    th {
-      background-color: #f2a1a1;
-    }
-    tr:nth-child(even) {
-      background-color: #f9f9f9;
-    }
+    <title>Ranking - MariMoss</title>
+    <style>
         @font-face {
             font-family: Napapiiri; 
             src: url(fonts/Napapiiri.ttf);
@@ -39,7 +20,7 @@
         }
 
         body {
-            color: white;
+            color: rgb(105, 255, 125);
             background-image: url(imgU/windows_7_12.jpg);
             background-attachment: fixed;
             background-size: cover;
@@ -47,6 +28,7 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            padding-top: 80px;
         }
 
         .navbar {
@@ -56,7 +38,10 @@
             background-size: cover;
             padding: 15px;
             width: 100%;
-            z-index: 10;
+            z-index: 100;
+            position: fixed;
+            top: 0;
+            left: 0;
         }
 
         .nav-links {
@@ -76,23 +61,57 @@
             transition: color 0.3s;
         }
 
-        .nav-links a:hover {
-            color: #4CAF50;
-        }
+        .nav-links a:hover { color: #4CAF50; }
 
         .main-wrapper {
             display: flex;
             flex: 1;
             width: 100%;
+            padding: 20px;
         }
 
-        .news-container {
+        .content-section {
             flex: 1;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-            padding: 20px;
-            align-content: start;
+            padding-right: 20px;
+        }
+
+        h2 {
+            font-family: 'SleepTalk', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #15fc00;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .ranking-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: rgba(0, 0, 0, 0.548);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .ranking-table th {
+            background: rgba(0, 0, 0, 0.4);
+            font-family: 'SleepTalk', sans-serif;
+            color: #4CAF50;
+            padding: 15px;
+            font-size: 1.3rem;
+        }
+
+        .ranking-table td {
+            padding: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .ranking-table tr:hover {
+            background: rgba(255, 255, 255, 0.05);
         }
 
         aside {
@@ -100,85 +119,93 @@
             background-image: url(imgU/sidebar1.png);
             background-size: cover;
             padding: 20px;
-            min-height: 100%;
-            }
-        </style>
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            border-radius: 15px;
+            height: fit-content;
+        }
 
+        .sidebar-video {
+            width: 100%;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
 
+        aside h3 {
+            font-family: 'SleepTalk', sans-serif;
+            font-size: 1.2rem;
+            color: #15fc00;
+            text-align: center;
+        }
 
+        aside img { width: 100%; }
 
+        .footer-link {
+            text-align: center;
+            margin-top: 20px;
+            list-style: none;
+        }
+
+        .footer-link a {
+            color: #15fc00;
+            font-family: 'SleepTalk', sans-serif;
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+    </style>
 </head>
-<body> 
+<body>
 
+<nav class="navbar">
+    <ul class="nav-links">
+        <li><a href="index.html">inicio</a></li>
+        <li><a href="tienda.html">tienda</a></li>
+        <li><a href="galeria.html">galeria</a></li>
+    </ul>
+</nav>
 
-<h2 style="text-align:center; font-family: Arial, sans-serif; color: #15fc00;">Ranking de 10 Animes con sus Fechas de Emisión</h2>
+<div class="main-wrapper">
+    <section class="content-section">
+        <h2>Ranking de 10 Animes</h2>
+        
+        <table class="ranking-table">
+            <thead>
+                <tr>
+                    <th>Pos.</th>
+                    <th>Anime</th>
+                    <th>Fecha de Emisión</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>Sousou no Frieren</td><td>Sep 2023 - Mar 2024</td></tr>
+                <tr><td>2</td><td>Sousou no Frieren 2nd Season</td><td>Ene 2026 - Actualidad</td></tr>
+                <tr><td>3</td><td>Fullmetal Alchemist: Brotherhood</td><td>Abr 2009 - Jul 2010</td></tr>
+                <tr><td>4</td><td>Chainsaw Man Movie: Reze-hen</td><td>Sep 2025</td></tr>
+                <tr><td>5</td><td>Steins;Gate</td><td>Abr 2011 - Sep 2011</td></tr>
+                <tr><td>6</td><td>Shingeki no Kyojin Season 3 Part 2</td><td>Abr 2019 - Jul 2019</td></tr>
+                <tr><td>7</td><td>Kimetsu no Yaiba</td><td>Abr 2019 - Sep 2019</td></tr>
+                <tr><td>8</td><td>Jujutsu Kaisen</td><td>Oct 2020 - Mar 2021</td></tr>
+                <tr><td>9</td><td>One Piece</td><td>Oct 1999 - Actualidad</td></tr>
+                <tr><td>10</td><td>Tamon’s B-Side</td><td>Feb 2026 - Actualidad</td></tr>
+            </tbody>
+        </table>
 
-<table style="width:100%; border-collapse: collapse; font-family: Arial, sans-serif; background-color: white; color: #333;">
-  <thead>
-    <tr style="background-color: #333; color: white;">
-      <th style="padding: 12px; border: 1px solid #ccc;">Ranking</th>
-      <th style="padding: 12px; border: 1px solid #ccc;">Anime</th>
-      <th style="padding: 12px; border: 1px solid #ccc;">Fecha de Emisión</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color: #f2f2f2;">
-      <td style="padding: 10px; border: 1px solid #ccc; text-align: center;">1</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">Sousou no Frieren</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">Sep 2023 - Mar 2024</td>
-    </tr>
-    <tr style="background-color: #f2f2f2;">
-      <td style="padding: 10px; border: 1px solid #ccc; text-align: center;">2</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">Sousou no Frieren 2nd Season</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">Ene 2026 - Actualidad</td>
-    </tr>
-    <tr style="background-color: #f2f2f2;">
-      <td style="padding: 10px; border: 1px solid #ccc; text-align: center;">3</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">Fullmetal Alchemist: Brotherhood</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">Abr 2009 - Jul 2010</td>
-    </tr>
-    <tr style="background-color: #f2f2f2;">
-      <td style="padding: 10px; border: 1px solid #ccc; text-align: center;">4</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">Chainsaw Man Movie: Reze-hen</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">Sep 2025</td>
-    </tr>
-    <tr style="background-color: #f2f2f2;">
-      <td style="padding: 10px; border: 1px solid #ccc; text-align: center;">5</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">Steins;Gate</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">Abr 2011 - Sep 2011</td>
-    </tr>
-    <tr style="background-color: #f2f2f2;">
-      <td style="padding: 10px; border: 1px solid #ccc; text-align: center;">6</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">Shingeki no Kyojin Season 3 Part 2</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">Abr 2019 - Jul 2019</td>
-    </tr>
-    <tr style="background-color: #f2f2f2;">
-      <td style="padding: 10px; border: 1px solid #ccc; text-align: center;">7</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">Kimetsu no Yaiba</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">Abr 2019 - Sep 2019</td>
-    </tr>
-    <tr style="background-color: #f2f2f2;">
-      <td style="padding: 10px; border: 1px solid #ccc; text-align: center;">8</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">Jujutsu Kaisen</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">Oct 2020 - Mar 2021</td>
-    </tr>
-    <tr style="background-color: #f2f2f2;">
-      <td style="padding: 10px; border: 1px solid #ccc; text-align: center;">9</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">One Piece (en emisión)</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">Oct 1999 - Actualidad</td>
-    </tr>
-    <tr style="background-color: #f2f2f2;">
-      <td style="padding: 10px; border: 1px solid #ccc; text-align: center;">10</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">Tamon’s B-Side</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">Feb 2026 - Actualidad</td>
-    </tr>
-  </tbody>
-</table>
-  <aside class="sidebar-right"> 
-            <img src="img/migueltag.png">
-            <img src="img/ButtonMMoss.png">
-        </aside>
-    </div>
-  <li><a href="VIDEO.html">video</video></a></li>
+        <div class="footer-link">
+            
+        </div>
+    </section>
+
+    <aside> 
+        <h3>Video</h3>
+        <video class="sidebar-video" controls>
+            <source src="img/VIDEO2.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
+        <img src="img/ButtonMMoss.png">
+    </aside>
+</div>
+
 </body>
 </html>
