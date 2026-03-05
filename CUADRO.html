@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title> cuadro </title>
+     <style>
+
+        
+    table {
+      width: 70%;
+      border-collapse: collapse;
+      margin: 20px auto;
+      font-family: Arial, sans-serif;
+    }
+    th, td {
+      border: 1px solid #333;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f2a1a1;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+        @font-face {
+            font-family: Napapiiri; 
+            src: url(fonts/Napapiiri.ttf);
+        }
+        @font-face {
+            font-family: SleepTalk; 
+            src: url(fonts/SLEEP.TTF);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            color: white;
+            background-image: url(imgU/windows_7_12.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: 'Napapiiri', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-image: url(imgU/navbar.png);
+            background-size: cover;
+            padding: 15px;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-family: 'SleepTalk', sans-serif;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #4CAF50;
+        }
+
+        .main-wrapper {
+            display: flex;
+            flex: 1;
+            width: 100%;
+        }
+
+        .news-container {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            padding: 20px;
+            align-content: start;
+        }
+
+        aside {
+            width: 300px;
+            background-image: url(imgU/sidebar1.png);
+            background-size: cover;
+            padding: 20px;
+            min-height: 100%;
+            }
+        </style>
+
+
+
+
+</head>
+<body> 
+
+
+<h2 style="text-align:center; font-family: Arial, sans-serif; color: #15fc00;">Ranking de 10 Animes con sus Fechas de Emisión</h2>
+
+<table style="width:100%; border-collapse: collapse; font-family: Arial, sans-serif; background-color: white; color: #333;">
+  <thead>
+    <tr style="background-color: #333; color: white;">
+      <th style="padding: 12px; border: 1px solid #ccc;">Ranking</th>
+      <th style="padding: 12px; border: 1px solid #ccc;">Anime</th>
+      <th style="padding: 12px; border: 1px solid #ccc;">Fecha de Emisión</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background-color: #f2f2f2;">
+      <td style="padding: 10px; border: 1px solid #ccc; text-align: center;">1</td>
+      <td style="padding: 10px; border: 1px solid #ccc;">Sousou no Frieren</td>
+      <td style="padding: 10px; border: 1px solid #ccc;">Sep 2023 - Mar 2024</td>
+    </tr>
+    <tr style="background-color: #f2f2f2;">
+      <td style="padding: 10px; border: 1px solid #ccc; text-align: center;">2</td>
+      <td style="padding: 10px; border: 1px solid #ccc;">Sousou no Frieren 2nd Season</td>
+      <td style="padding: 10px; border: 1px solid #ccc;">Ene 2026 - Actualidad</td>
+    </tr>
+    <tr style="background-color: #f2f2f2;">
+      <td style="padding: 10px; border: 1px solid #ccc; text-align: center;">3</td>
+      <td style="padding: 10px; border: 1px solid #ccc;">Fullmetal Alchemist: Brotherhood</td>
+      <td style="padding: 10px; border: 1px solid #ccc;">Abr 2009 - Jul 2010</td>
+    </tr>
+    <tr style="background-color: #f2f2f2;">
+      <td style="padding: 10px; border: 1px solid #ccc; text-align: center;">4</td>
+      <td style="padding: 10px; border: 1px solid #ccc;">Chainsaw Man Movie: Reze-hen</td>
+      <td style="padding: 10px; border: 1px solid #ccc;">Sep 2025</td>
+    </tr>
+    <tr style="background-color: #f2f2f2;">
+      <td style="padding: 10px; border: 1px solid #ccc; text-align: center;">5</td>
+      <td style="padding: 10px; border: 1px solid #ccc;">Steins;Gate</td>
+      <td style="padding: 10px; border: 1px solid #ccc;">Abr 2011 - Sep 2011</td>
+    </tr>
+    <tr style="background-color: #f2f2f2;">
+      <td style="padding: 10px; border: 1px solid #ccc; text-align: center;">6</td>
+      <td style="padding: 10px; border: 1px solid #ccc;">Shingeki no Kyojin Season 3 Part 2</td>
+      <td style="padding: 10px; border: 1px solid #ccc;">Abr 2019 - Jul 2019</td>
+    </tr>
+    <tr style="background-color: #f2f2f2;">
+      <td style="padding: 10px; border: 1px solid #ccc; text-align: center;">7</td>
+      <td style="padding: 10px; border: 1px solid #ccc;">Kimetsu no Yaiba</td>
+      <td style="padding: 10px; border: 1px solid #ccc;">Abr 2019 - Sep 2019</td>
+    </tr>
+    <tr style="background-color: #f2f2f2;">
+      <td style="padding: 10px; border: 1px solid #ccc; text-align: center;">8</td>
+      <td style="padding: 10px; border: 1px solid #ccc;">Jujutsu Kaisen</td>
+      <td style="padding: 10px; border: 1px solid #ccc;">Oct 2020 - Mar 2021</td>
+    </tr>
+    <tr style="background-color: #f2f2f2;">
+      <td style="padding: 10px; border: 1px solid #ccc; text-align: center;">9</td>
+      <td style="padding: 10px; border: 1px solid #ccc;">One Piece (en emisión)</td>
+      <td style="padding: 10px; border: 1px solid #ccc;">Oct 1999 - Actualidad</td>
+    </tr>
+    <tr style="background-color: #f2f2f2;">
+      <td style="padding: 10px; border: 1px solid #ccc; text-align: center;">10</td>
+      <td style="padding: 10px; border: 1px solid #ccc;">Tamon’s B-Side</td>
+      <td style="padding: 10px; border: 1px solid #ccc;">Feb 2026 - Actualidad</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+</body>
